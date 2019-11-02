@@ -1,5 +1,51 @@
+using System;
+
 public abstract class Creature
 {
-    public int Attack { get; set; }
-    public int Defense { get; set; }
+    private Game game;
+    public string Name;
+    private int attack, defense;
+
+    public Creature(Game game)
+    {
+        this.game = game ?? throw new ArgumentNullException(paramName: nameof(game));        
+    }
+
+    public int Attack
+    {
+        get
+        {
+            var q = new Query(Name, Query.Argument.Attack, attack);
+            game.PerformQuery(this, q);
+            return q.Value;
+        }
+
+        set
+        {
+            var q = new Query(Name, Query.Argument.Attack, value);
+            game.PerformQuery(this, q);
+            q.Value = value;
+        }
+    }
+
+    public int Defense
+    {
+        get
+        {
+            var q = new Query(Name, Query.Argument.Defense, defense);
+            game.PerformQuery(this, q);
+            return q.Value;
+        }
+        set
+        {
+            var q = new Query(Name, Query.Argument.Attack, value);
+            game.PerformQuery(this, q);
+            q.Value = value;
+        }
+    }
+
+    public override string ToString() // no game
+    {
+        return $"{nameof(Name)}: {Name}, {nameof(attack)}: {Attack}, {nameof(defense)}: {Defense}";
+    }
 }
