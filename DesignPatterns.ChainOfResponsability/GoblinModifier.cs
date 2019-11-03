@@ -7,7 +7,7 @@
     protected override void Handle(object sender, Query q)
     {
       if (q.CreatureName == creature.Name &&
-          q.WhatToQuery == Query.Argument.Defense)
+          q.WhatToQuery == Query.Argument.Defense ) //&&           sender != this)
         q.Value += 1;
     }
   }

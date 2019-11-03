@@ -1,8 +1,9 @@
 public class GoblinKing : Goblin
 {
-    public GoblinKing(Game game): base(game)
+    public GoblinKing(Game game) : base(game)
     {
-        this.Attack = this.Defense = 3;
-        this.Name= nameof(GoblinKing);
+        this.attack = 3;
+        this.defense = 3;
+        this.Name = nameof(Goblin);
     }
 }

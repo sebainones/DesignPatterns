@@ -6,6 +6,8 @@ public class Game // mediator pattern
     private IList<Creature> Creatures;
     public event EventHandler<Query> Queries; // effectively a chain
 
+    private List<CreatureModifier> creatureModifiers = new List<CreatureModifier>();
+
     public Game()
     {
         this.Creatures = new List<Creature>();
@@ -13,21 +15,14 @@ public class Game // mediator pattern
 
     public void AddCreature(Creature creature)
     {
-        if(creature.Name == nameof(Goblin))
+        if(creature is GoblinKing)
         {
-            using(var goblinModifier = new GoblinModifier(this,creature))
-            {
-
-            }
+            creatureModifiers.Add(new GoblinKingModifier(this,creature));
         }
-        else if(creature.Name == nameof(GoblinKing))
+        else if(creature is Goblin)
         {
-            using(var goblinModifier = new GoblinKingModifier(this,creature))
-            {
-
-            }
-
-        }
+           creatureModifiers.Add(new GoblinModifier(this,creature));
+        }        
     }
 
     public void PerformQuery(object sender, Query q)

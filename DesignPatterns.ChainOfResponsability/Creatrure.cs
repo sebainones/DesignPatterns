@@ -4,11 +4,11 @@ public abstract class Creature
 {
     private Game game;
     public string Name;
-    private int attack, defense;
+    protected int attack, defense;
 
     public Creature(Game game)
     {
-        this.game = game ?? throw new ArgumentNullException(paramName: nameof(game));        
+        this.game = game ?? throw new ArgumentNullException(paramName: nameof(game));    
     }
 
     public int Attack
@@ -22,9 +22,9 @@ public abstract class Creature
 
         set
         {
-            var q = new Query(Name, Query.Argument.Attack, value);
+            var q = new Query(Name, Query.Argument.Attack, attack);
             game.PerformQuery(this, q);
-            q.Value = value;
+            q.Value = attack;
         }
     }
 
@@ -38,9 +38,9 @@ public abstract class Creature
         }
         set
         {
-            var q = new Query(Name, Query.Argument.Attack, value);
+            var q = new Query(Name, Query.Argument.Defense, defense);
             game.PerformQuery(this, q);
-            q.Value = value;
+            q.Value = defense;
         }
     }
 
