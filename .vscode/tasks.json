@@ -8,6 +8,7 @@
             "args": [
                 "build",
                 "${workspaceFolder}/DesignPatterns.ChainOfResponsability/DesignPatterns.ChainOfResponsability.csproj",
+                "${workspaceFolder}/DesignPatterns.Tests/DesignPatterns.Tests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -20,6 +21,7 @@
             "args": [
                 "publish",
                 "${workspaceFolder}/DesignPatterns.ChainOfResponsability/DesignPatterns.ChainOfResponsability.csproj",
+                "${workspaceFolder}/DesignPatterns.Tests/DesignPatterns.Tests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
