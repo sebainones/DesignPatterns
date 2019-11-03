@@ -1,17 +1,20 @@
-public class GoblinKingModifier : CreatureModifier
+namespace DesignPatterns.ChainOfResponsability
 {
-    public GoblinKingModifier(Game game, Creature creature) : base(game, creature)
+    public class GoblinKingModifier : CreatureModifier
     {
-    }
-
-    protected override void Handle(object sender, Query q)
-    {
-        if (q.CreatureName == creature.Name &&
-            q.WhatToQuery == Query.Argument.Attack &&
-            !(sender is GoblinKing))
+        public GoblinKingModifier(Game game, Creature creature) : base(game, creature)
         {
-            q.Value += 1;
         }
 
+        protected override void Handle(object sender, Query q)
+        {
+            if (q.CreatureName == creature.Name &&
+                q.WhatToQuery == Query.Argument.Attack &&
+                !(sender is GoblinKing))
+            {
+                q.Value += 1;
+            }
+
+        }
     }
 }

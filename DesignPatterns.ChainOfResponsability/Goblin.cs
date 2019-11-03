@@ -1,9 +1,12 @@
-public class Goblin : Creature
+namespace DesignPatterns.ChainOfResponsability
 {
-    public Goblin(Game game) : base(game)
+    public class Goblin : Creature
     {
-        this.attack =1;
-        this.defense =1;
-        this.Name = nameof(Goblin);        
+        public Goblin(Game game) : base(game)
+        {
+            this.attack = 1;
+            this.defense = 1;
+            this.Name = nameof(Goblin);
+        }
     }
 }

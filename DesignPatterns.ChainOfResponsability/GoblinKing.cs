@@ -1,9 +1,12 @@
-public class GoblinKing : Goblin
+namespace DesignPatterns.ChainOfResponsability
 {
-    public GoblinKing(Game game) : base(game)
+    public class GoblinKing : Goblin
     {
-        this.attack = 3;
-        this.defense = 3;
-        this.Name = nameof(Goblin);
+        public GoblinKing(Game game) : base(game)
+        {
+            this.attack = 3;
+            this.defense = 3;
+            this.Name = nameof(Goblin);
+        }
     }
 }

@@ -13,9 +13,9 @@ namespace DesignPatterns.ChainOfResponsability
 
             // Console.WriteLine($"G-1 attack: {goblinOne.Attack} - defenese {goblinOne.Defense}");
 
-            game.AddCreature(goblinOne);
+            game.AddCreature(goblinOne);           
 
-            // Console.WriteLine($"G-1 attack: {goblinOne.Attack} - defenese {goblinOne.Defense}");
+             Console.WriteLine($"G-1 attack: {goblinOne.Attack} - defenese {goblinOne.Defense}");
 
             Creature goblinTwo = new Goblin(game);
             Creature goblinThree = new Goblin(game);
