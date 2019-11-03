@@ -8,6 +8,18 @@
             "args": [
                 "build",
                 "${workspaceFolder}/DesignPatterns.ChainOfResponsability/DesignPatterns.ChainOfResponsability.csproj",
+                // "${workspaceFolder}/DesignPatterns.Tests/DesignPatterns.Tests.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "buildTest",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
                 "${workspaceFolder}/DesignPatterns.Tests/DesignPatterns.Tests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
@@ -21,7 +33,7 @@
             "args": [
                 "publish",
                 "${workspaceFolder}/DesignPatterns.ChainOfResponsability/DesignPatterns.ChainOfResponsability.csproj",
-                "${workspaceFolder}/DesignPatterns.Tests/DesignPatterns.Tests.csproj",
+                // "${workspaceFolder}/DesignPatterns.Tests/DesignPatterns.Tests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
